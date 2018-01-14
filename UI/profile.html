@@ -1,0 +1,295 @@
+<!--@author Marco Law-->
+<!--@date   01-13-18-->
+
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>myHealthTech - My Profile</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="fonts/fonts/css" rel="stylesheet">
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+</head>
+
+<style type="text/css">
+        @font-face {
+            font-family: DINPro-Bold;
+            src: url(fonts/DINPro-Bold_13934.ttf);
+            }
+
+        @font-face {
+            font-family: DINPro-Regular;
+            src: url(fonts/DINPro-Regular_13937.ttf);
+            }
+
+        @font-face {
+            font-family: SSPro-Light;
+            src: url(fonts/SourceSansPro-Light.otf);
+        }
+
+        @font-face {
+            font-family: SSPro-Semibold;
+            src: url(fonts/SourceSansPro-Semibold.otf);
+        }
+
+        #main_header {
+            border-bottom:1px solid rgb(193,193,193);
+            padding-bottom:5px;
+        }
+
+        #underline {
+            border-bottom:1px solid rgb(193,193,193);
+            padding-bottom:5px;
+
+            -webkit-box-shadow:0px 1px 1px rgb(233,233,233);
+            -moz-box-shadow:0px 1px 1px rgb(233,233,233);
+            box-shadow:0px 1px 1px rgb(233,233,233);
+        }
+        #underline1 {
+            border-bottom:1px solid rgb(193,193,193);
+            padding-bottom:5px;
+            margin-right: 80px
+            margin-left: 80px
+            -webkit-box-shadow:0px 1px 1px rgb(233,233,233);
+            -moz-box-shadow:0px 1px 1px rgb(233,233,233);
+            box-shadow:0px 1px 1px rgb(233,233,233);
+        }
+        #label {
+          display: block;
+          padding: 0.5em;
+          text-align: center;
+          color: #666;
+          margin-left:125px;
+          margin-right:125px;
+          background-color:#EAF3FA;
+          -webkit-border-radius:10px;
+          -moz-border-radius:10px;
+          -ms-border-radius:10px;
+          -o-border-radius:10px;
+          border-radius:10px;
+        }
+        #label:hover {
+          color: #000;
+        }
+        #label::before {
+          font-family: Consolas, monaco, monospace;
+          font-weight: bold;
+          font-size: 15px;
+          content:" ";
+          vertical-align: text-top;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+
+        }
+        #expand {
+          height: 0px;
+          overflow: hidden;
+          transition: height 0.5s;
+          margin-left:125px;
+          margin-right:125px;
+          color: #000;
+          -webkit-border-radius:10px;
+          -moz-border-radius:10px;
+          -ms-border-radius:10px;
+          -o-border-radius:10px;
+          border-radius:10px;
+          border-color:black;
+        }
+        #toggle {
+          display:none;
+          visibility: hidden;
+
+        }
+        #section {
+          padding: 0 20px;
+        }
+        #toggle:checked ~ #expand {
+          height: auto;
+        }
+        #toggle:checked ~ label::before {
+        }
+
+         #label1 {
+          display: block;
+          padding: 0.5em;
+          text-align: center;
+          color: #666;
+          margin-left:125px;
+          margin-right:125px;
+          background-color:#EAF3FA;
+          -webkit-border-radius:10px;
+          -moz-border-radius:10px;
+          -ms-border-radius:10px;
+          -o-border-radius:10px;
+          border-radius:10px;
+        }
+        #label1:hover {
+          color: #000;
+        }
+        #label1::before {
+          font-family: Consolas, monaco, monospace;
+          font-weight: bold;
+          font-size: 15px;
+          content:" ";
+          vertical-align: text-top;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+
+        }
+        #expand1 {
+          height: 0px;
+          overflow: hidden;
+          transition: height 0.5s;
+          margin-left:125px;
+          margin-right:125px;
+          color: #000;
+          -webkit-border-radius:10px;
+          -moz-border-radius:10px;
+          -ms-border-radius:10px;
+          -o-border-radius:10px;
+          border-radius:10px;
+          border-color:black;
+        }
+        #toggle1 {
+          display:none;
+          visibility: hidden;
+
+        }
+        #section1 {
+          padding: 0 20px;
+        }
+        #toggle1:checked ~ #expand1 {
+          height: auto;
+        }
+        #toggle1:checked ~ label1::before {
+        }
+
+        #label2 {
+          display: block;
+          padding: 0.5em;
+          text-align: center;
+          color: #666;
+          margin-left:125px;
+          margin-right:125px;
+          background-color:#EAF3FA;
+          -webkit-border-radius:10px;
+          -moz-border-radius:10px;
+          -ms-border-radius:10px;
+          -o-border-radius:10px;
+          border-radius:10px;
+        }
+        #label2:hover {
+          color: #000;
+        }
+        #label2::before {
+          font-family: Consolas, monaco, monospace;
+          font-weight: bold;
+          font-size: 15px;
+          content:" ";
+          vertical-align: text-top;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+
+        }
+        #expand2 {
+          height: 0px;
+          overflow: hidden;
+          transition: height 0.5s;
+          margin-left:125px;
+          margin-right:125px;
+          color: #000;
+          -webkit-border-radius:10px;
+          -moz-border-radius:10px;
+          -ms-border-radius:10px;
+          -o-border-radius:10px;
+          border-radius:10px;
+          border-color:black;
+        }
+        #toggle2 {
+          display:none;
+          visibility: hidden;
+
+        }
+        #section2 {
+          padding: 0 20px;
+        }
+        #toggle2:checked ~ #expand2 {
+          height: auto;
+        }
+        #toggle2:checked ~ label2::before {
+        }
+
+        h6 {
+          font-size:16px
+        }
+    </style>
+
+<body>
+<div id="main_header">
+    <h4 style="text-align:center; font-family:DINPro-Regular; color:#555555;">
+        <span style="text-align:center; display:inline; font-family:DINPro-Bold;">myHealth</span>Tech<sup style="color:#e27457"><span style='font-weight: bold;'>+</span></sup></h4>
+</div>
+
+<br>
+
+<div id="main_bar">
+    <div align="left" style="color:#555555; PADDING-LEFT:25px; float:left; display:inline-block;vertical-align:top;">
+        <img src="css/Profile.png" alt="img"/>
+    </div>
+    <div align="left" style="PADDING-LEFT:10px; float:left; display:inline-block;">
+        <h5 style="color:#555555; font-family:DINPro-Bold;">Steve Apple</h5>
+        <h5 style="color:#555555; font-family:DINPro-Regular;"><span style="font-family:DINPro-Bold;">ID: </span>A123B456C789</h5>
+        <div align="left" style="float:left; display:inline-block;vertical-align:top;">
+            <a href="profile.html" ><img src="css/ProfileButton.png" alt="img"/></a>
+            <a href="login.html"><img src="css/SignOut.png" alt="img"/></a>
+
+            <div align="right" style="color:#555555; PADDING-LEFT:725px; float:right; display:inline; vertical-align:top;">
+                <div class="dropdown" align="right" style="color:#555555; display:inline; PADDING-RIGHT: 5px; font-family:DINPro-Bold;">
+                    <button class="btn btn-default dropdown-toggle" style="color:#555555;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Medical Reports
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="medical_home.html" style="color:#555555;">Visits</a></li>
+                        <li><a href="test_results.html" style="color:#555555;">Test Results</a></li>
+                        <li><a href="#" style="color:#555555;">Cases</a></li>
+                    </ul>
+                </div>
+
+                <div align="right" style="display:inline; PADDING-RIGHT: 5px; font-family:DINPro-Bold;">
+                    <a class="btn btn-default" href="permissions.html" role="button" style="color:#555555;">Permissions<sup style="color:#e27457"><span style='font-weight: bold;'>*</span></sup></a>
+                </div>
+
+                <div align="right" style="display:inline; PADDING-RIGHT: 10px; font-family:DINPro-Bold;">
+                    <a class="btn btn-default" href="self_report.html" role="button" style="color: #e27457;">Self Reporting</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br>
+<div id="underline">
+</div>
+<div style="height:auto; width:100%">
+    <img src="css/YourProfile.png" width=100% />
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
