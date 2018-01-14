@@ -16,6 +16,22 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
+        <script>
+           function Login(form){
+               username = new Array("nwhacks18");
+               password = new Array("demo");
+               page = "welcome_page.html"
+               if (form.username1.value == username && form.password1.value == password) {
+                 self.location.href=page;
+                 return false;
+               } else {
+                 alert("Incorrect username or password");
+                 document.getElementById(selector).reset();
+                 return true;
+               }
+           }
+       </script>
+
     </head>
 
     <style type="text/css">
@@ -60,17 +76,17 @@
                 <br><br>
             </div>
 
-            <form method="POST" action="welcome_page.html">
+            <form method="post">
                 <div class="form-group">
-                    <input style="font-family:DINPro-Regular" align="middle" class="form-control" id="username1" placeholder="Username">
+                    <input type="text"style="font-family:DINPro-Regular" align="middle" class="form-control" id="username1" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <input style="font-family:DINPro-Regular"align="middle" class="form-control" id="password1" placeholder="Password">
+                    <input type="password" style="font-family:DINPro-Regular"align="middle" class="form-control" id="password1" placeholder="Password">
                 </div>
 
                 <div>
                     <br>
-                    <p style="text-align: center;"><input class="button1" type="image" name="submit" src="css/Button1.png" width="40%" height="40%" alt="Submit"></p>
+                    <p style="text-align: center;"><input class="button1" type="image" name="submit" src="css/Button1.png" width="40%" height="40%" alt="Submit" onClick="return Login(this.form)"></p>
                 </div>
             </form>
 
