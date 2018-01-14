@@ -123,24 +123,24 @@ function runScript() {
     root.mainloop()
 };
 
-<!--function runScript() {-->
-    <!--var request = new XMLHttpRequest();-->
-    <!--request.onreadystatechange = function() {-->
-        <!--if (request.readyState === 4) {-->
-            <!--if (request.status === 200) {-->
-                <!--alert('Ran the script, result was ' + request.responseText);-->
-            <!--} else {-->
-                <!--alert('Something went wrong, status was ' + request.status);-->
-            <!--}-->
-        <!--}-->
-    <!--};-->
-    <!--request.open('POST', '/your_script.php', true);-->
-    <!--request.send(null);-->
-    <!--return false;  // Prevent the default button action-->
-<!--};-->
-
 document.getElementById('script-button').onclick = runScript;
 </script>
+
+<!--function runScript() {-->
+<!--var request = new XMLHttpRequest();-->
+<!--request.onreadystatechange = function() {-->
+<!--if (request.readyState === 4) {-->
+<!--if (request.status === 200) {-->
+<!--alert('Ran the script, result was ' + request.responseText);-->
+<!--} else {-->
+<!--alert('Something went wrong, status was ' + request.status);-->
+<!--}-->
+<!--}-->
+<!--};-->
+<!--request.open('POST', '/your_script.php', true);-->
+<!--request.send(null);-->
+<!--return false;  // Prevent the default button action-->
+<!--};-->
 
 </body>
 </html>
