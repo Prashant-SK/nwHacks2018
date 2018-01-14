@@ -4,6 +4,7 @@ dataPlotGUI: Class to plot and visualize patient data
 
 import Tkinter
 import tkMessageBox
+import tkFileDialog
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 import pandas as pd
@@ -14,16 +15,17 @@ class App:
     
     def save(self):
         datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
-        subdirectory = 'reports/'
-        # Creating new subdirectory if it doesn't already exist
-        try:
-            os.stat(subdirectory)
-        except:
-            os.mkdir(subdirectory) 
-            
-        saveName = self.fieldVal.get() + "_plot.jpg"
-        self.fig.savefig(subdirectory + saveName)
-        tkMessageBox.showinfo("Save", "Figure saved as " + saveName)
+        f = tkFileDialog.asksaveasfilename(defaultextension=".jpg")
+#        subdirectory = 'reports/'
+#        # Creating new subdirectory if it doesn't already exist
+#        try:
+#            os.stat(subdirectory)
+#        except:
+#            os.mkdir(subdirectory) 
+        
+#        saveName = self.fieldVal.get() + "_plot.jpg"
+        self.fig.savefig(f)
+        tkMessageBox.showinfo("Save", "Figure saved as " + str(f))
         
     def plotQuit(self):
         root.quit()     # stops mainloop
@@ -32,7 +34,7 @@ class App:
                         
     def analytics(self):
         execfile('predictiveAnalytics.py')
-        tkMessageBox.showinfo("Analytics", "Analytics Complete. Check Reports Directory for Report and Figures.")     
+        tkMessageBox.showinfo("Analytics", "Analytics Complete. Check Saved Figure for Adverse Event Probabilities.")     
         
     # Function to clear and make plot
     def make_plot(self, field):
@@ -80,13 +82,13 @@ class App:
         self.saveButton = Tkinter.Button(frame, text='Save Figure', command=self.save)
         self.saveButton.pack(side="left") 
         
+        # Analytics button
+        self.aButton = Tkinter.Button(frame, text='Generate Predictive Analytics', command=self.analytics)
+        self.aButton.pack(side="left")
+        
         # Quit button
         self.quitButton = Tkinter.Button(frame, text='Quit', command=self.plotQuit)
         self.quitButton.pack(side="left")
-        
-        # Analytics button
-        self.aButton = Tkinter.Button(frame, text='Perform Analytics', command=self.analytics)
-        self.aButton.pack(side="left")
         
         # Initial dummy data
         field = 'Mood'

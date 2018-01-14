@@ -3,7 +3,9 @@
 predictiveAnalytics.py: Script to analyze a patient's self reporting history to
 generate statistcs for predictive analysis
 """
-
+import Tkinter
+import tkMessageBox
+import tkFileDialog
 import pandas as pd
 import numpy as np
 import matplotlib.mlab as mlab
@@ -122,13 +124,18 @@ plt.legend()
 plt.xlabel('Date')
 plt.ylabel('Probability')
 plt.title('Probability of Adverse Events')
-plt.savefig('reports/adverseEvents.jpg')
+f = tkFileDialog.asksaveasfilename(defaultextension=".jpg")
+plt.savefig(f)
+tkMessageBox.showinfo("Save", "Figure saved as " + str(f))
 
-text_file = open("reports/report.txt", "w")
-text_file.write("First date of depressive episode: " + str(firstDepEp) + "\n")
-text_file.write("Longest depressive episode interval: " + str(depEpStreak) + "\n")
-text_file.close()
+if(depEpStreak):
+    depEpStatus = "YES"
+else:
+    depEpStatus = "NO"
     
+popupMessage = "Depressive Episode Detected: " + depEpStatus + "\nFirst date of depressive episode: " + str(firstDepEp) + "\n" + "Longest depressive episode interval: " + str(depEpStreak) + "\n"
+                
+tkMessageBox.showinfo("Analytics", popupMessage)
 
 
 
