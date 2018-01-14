@@ -28,34 +28,45 @@
             font-family: DINPro-Regular;
             src: url(fonts/DINPro-Regular_13937.ttf);
             }
+
+        @font-face {
+            font-family: SSPro-Light;
+            src: url(fonts/SourceSansPro-Light.otf);
+            }
+
+        @font-face {
+            font-family: SSPro-Semibold;
+            src: url(fonts/SourceSansPro-Semibold.otf);
+            }
     </style>
 
     <body>
         <div class="col-md-4 col-md-offset-4">
             <div>
                 <br><br><br><br>
-                <h2 style="text-align:center; display:inline; font-family:DINPro-Bold;">Health</h2>
-                <h2 style="text-alight:center; font-family:DINPro-Regular;">Tech</h2>
+                <h2 style="text-align:center; font-family:DINPro-Regular;"> <span style="text-align:center; display:inline; font-family:DINPro-Bold;">Health</span>Tech<sup style="color:red">+</sup></h2>
                 <br><br>
             </div>
 
             <form>
                 <div class="form-group">
-                    <input align="middle" class="form-control" id="username1" placeholder="Username">
+                    <input style="font-family:DINPro-Regular" align="middle" class="form-control" id="username1" placeholder="Username">
                 </div>
             </form>
             <form>
                 <div class="form-group">
-                    <input align="middle" class="form-control" id="password1" placeholder="Password">
+                    <input style="font-family:DINPro-Regular"align="middle" class="form-control" id="password1" placeholder="Password">
                 </div>
 
                 <div class="button1">
-                    <p style="text-align: center;"><button id="button1" type="submit" class="btn btn-default">Log In</button></p>
+                    <br>
+                    <p style="text-align: center;"><input type="image" name="submit" src="css/Button1.png" width="40%" height="40%" alt="Submit"></p>
                 </div>
             </form>
 
             <div>
-                <h3 style="text-align:center"><small>New to HealthTech?</small><a href="" style="link:orange; hover=red;"><small>
+                <h3 style="font-family:SSPro-Light; text-align:center"><small>New to HealthTech?</small>
+                    <a href="" style="font-family:SSPro-Semibold; link:orange; hover=red;"><small>
                         Sign up</small></a></h3>
             </div>
         </div>
