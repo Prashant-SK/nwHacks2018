@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>myHealthTech - Medical - Test Results</title>
+    <title>myHealthTech - Medical - Home</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="fonts/fonts/css" rel="stylesheet">
@@ -58,6 +58,7 @@
         }
         #underline1 {
             border-bottom:1px solid rgb(193,193,193);
+            padding-bottom:5px;
             margin-right: 80px
             margin-left: 80px
             -webkit-box-shadow:0px 1px 1px rgb(233,233,233);
@@ -235,48 +236,6 @@
         h6 {
           font-size:16px
         }
-
-        .slidecontainer {
-    width: 100%; /* Width of the outside container */
-}
-
-/* The slider itself */
-.slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 10px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-
-}
-
-/* Mouse-over effects */
-.slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-}
-
-/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 10px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-        padding-top: 10px;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 10px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-        padding-top: 10px;
-}
     </style>
 
 <body>
@@ -307,7 +266,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a href="medical_home.html" style="color:#555555;">Visits</a></li>
                         <li><a href="test_results.html" style="color:#555555;">Test Results</a></li>
-                        <li><a href="" style="color:#555555;">Cases</a></li>
+                        <li><a href="#" style="color:#555555;">Cases</a></li>
                     </ul>
                 </div>
 
@@ -326,102 +285,8 @@
 <br><br><br><br><br>
 <div id="underline">
 </div>
-<div align="left" style="PADDING-LEFT:125px; float:left;">
-    <h2 style="color:#555555 ; font-family:DINPro-Bold;">Self Reporting</h2>
-</div>
-
-
-<div style="clear:both; border-color:black">
-    <input id="toggle" type="checkbox" checked>
-    <label id="label" for="toggle"><span style="float:left">13/01/2018 - New Self Report</span>
-        <span style="float:right">Psychological Report</span></label>
-    <div id="expand">
-        <section id="section">
-            <h6><strong>How do you feel? </strong></h6>
-            <div id="underline1"></div>
-            <div style="display:table; width:100%">
-                <div style="display:table-row">
-                    <div style="display:table-cell; width:20%">
-                        <div><p>Mood</p></div>
-                        <div><p>Energy</p></div>
-                        <div><p>Concentration</p></div>
-                        <div><p>Interest in Activities</p></div>
-                        <div><p>Agitation</p></div>
-                        <div><p>Guilt</p></div>
-                        <div><p>Suicidality</p></div>
-                        <div><p>Weight (kg)</p></div>
-                        <div><p>Hours of Sleep (Past 24 Hours)</p></div>
-                    </div>
-                    <div style="display:table-cell; width:5%; text-align:right">
-                        <div><p>0 &emsp;</p></div>
-                        <div><p>0 &emsp;</p></div>
-                        <div><p>0 &emsp;</p></div>
-                        <div><p>0 &emsp;</p></div>
-                        <div><p>0 &emsp;</p></div>
-                        <div><p>0 &emsp;</p></div>
-                        <div><p>0 &emsp;</p></div>
-                        <div><p></p></div>
-                        <div><p></p></div>
-                    </div>
-                    <div style="display:table-cell; width:auto">
-                        <form>
-                            <div class="slidecontainer" style="padding-top:10px; padding-bottom:9px">
-                                <input type="range" min="0" max="10" value="5" class="slider" id="mood">
-                            </div>
-                            <div class="slidecontainer" style="padding-top:10px; padding-bottom:9px">
-                                <input type="range" min="0" max="10" value="5" class="slider" id="energy">
-                            </div>
-                            <div class="slidecontainer" style="padding-top:10px; padding-bottom:12px">
-                                <input type="range" min="0" max="10" value="5" class="slider" id="conc">
-                            </div>
-                            <div class="slidecontainer" style="padding-top:9px; padding-bottom:12px">
-                                <input type="range" min="0" max="10" value="5" class="slider" id="interest">
-                            </div>
-                            <div class="slidecontainer" style="padding-top:8px; padding-bottom:9px">
-                                <input type="range" min="0" max="10" value="5" class="slider" id="agit">
-                            </div>
-                            <div class="slidecontainer" style="padding-top:10px; padding-bottom:12px">
-                                <input type="range" min="0" max="10" value="5" class="slider" id="guilt">
-                            </div>
-                            <div class="slidecontainer" style="padding-top:9px">
-                                <input type="range" min="0" max="10" value="5" class="slider" id="suicide">
-                            </div>
-                            <div style="padding-top:10px; text-align:center">
-                                <input type="text" placeholder="Weight (kg)" style="text-align:center; color:#555555; font-family:DINPro-Regular" align="center">
-                            </div>
-                            <div style="padding-top:5px; text-align:center">
-                                <input type="text" placeholder="Sleep (within 24 hrs)" style="text-align:center; color:#555555; font-family:DINPro-Regular" align="center">
-                            </div>
-                        </form>
-                    </div>
-                    <div style="display:table-cell; width:5%; text-align:left">
-                        <div><p>&emsp; 10</p></div>
-                        <div><p>&emsp; 10</p></div>
-                        <div><p>&emsp; 10</p></div>
-                        <div><p>&emsp; 10</p></div>
-                        <div><p>&emsp; 10</p></div>
-                        <div><p>&emsp; 10</p></div>
-                        <div><p>&emsp; 10</p></div>
-                        <div><p></p></div>
-                        <div><p></p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-
-<div style="clear:both; border-color:black">
-    <input id="toggle1" type="checkbox" unchecked>
-    <label id="label1" for="toggle1"><span style="float:left">10/11/2017 - Self Psychological Report</span>
-        <span style="float:right">View Details</span></label>
-</div>
-
-
-<div style="clear:both; border-color:black">
-    <input id="toggle2" type="checkbox" unchecked>
-    <label id="label2" for="toggle2"><span style="float:left">10/10/2017 - Self Psychological Report</span>
-        <span style="float:right">View Details</span></label>
+<div style="height:auto; width:100%">
+    <img src="css/YourProfile.png" width=100% />
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
