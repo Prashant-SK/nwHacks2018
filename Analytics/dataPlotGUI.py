@@ -14,7 +14,7 @@ class App:
     
     def save(self):
         datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
-        subdirectory = 'saved_plots/'
+        subdirectory = 'reports/'
         # Creating new subdirectory if it doesn't already exist
         try:
             os.stat(subdirectory)
@@ -30,6 +30,10 @@ class App:
         root.destroy()  # this is necessary on Windows to prevent
                         # Fatal Python Error: PyEval_RestoreThread: NULL state
                         
+    def analytics(self):
+        execfile('predictiveAnalytics.py')
+        tkMessageBox.showinfo("Analytics", "Analytics Complete. Check Reports Directory for Report and Figures.")     
+        
     # Function to clear and make plot
     def make_plot(self, field):
              
@@ -72,7 +76,6 @@ class App:
         self.field_select = Tkinter.OptionMenu(frame, self.fieldVal, "Mood", "Energy", "Concentration", "Interest In Activities", "Agitation", "Guilt", "Suicidality", "Weight", "Hours of Sleep" , command=self.change_field)
         self.field_select.pack(side="left")
         
-
         # Save Button   
         self.saveButton = Tkinter.Button(frame, text='Save Figure', command=self.save)
         self.saveButton.pack(side="left") 
@@ -80,6 +83,10 @@ class App:
         # Quit button
         self.quitButton = Tkinter.Button(frame, text='Quit', command=self.plotQuit)
         self.quitButton.pack(side="left")
+        
+        # Analytics button
+        self.aButton = Tkinter.Button(frame, text='Perform Analytics', command=self.analytics)
+        self.aButton.pack(side="left")
         
         # Initial dummy data
         field = 'Mood'

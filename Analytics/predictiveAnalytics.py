@@ -106,6 +106,14 @@ for i in range (0, len(pData.index)):
     pData['Academic Struggle Probability'][i] = probA
     pData['Peer Conflict Probability'][i] = probP    
 
+# Saving plots and reports
+subdirectory = 'reports/'
+# Creating new subdirectory if it doesn't already exist
+try:
+    os.stat(subdirectory)
+except:
+    os.mkdir(subdirectory) 
+            
 plt.figure(figsize = (12,5))
 plt.plot(pData['Date'], pData['Self-Harm Probability'], 'r--', label = 'Self-Harm Probability')
 plt.plot(pData['Date'], pData['Academic Struggle Probability'], 'b--', label = 'Academic Struggle Probability')
@@ -114,9 +122,9 @@ plt.legend()
 plt.xlabel('Date')
 plt.ylabel('Probability')
 plt.title('Probability of Adverse Events')
-plt.savefig('adverseEvents.jpg')
+plt.savefig('reports/adverseEvents.jpg')
 
-text_file = open("report.txt", "w")
+text_file = open("reports/report.txt", "w")
 text_file.write("First date of depressive episode: " + str(firstDepEp) + "\n")
 text_file.write("Longest depressive episode interval: " + str(depEpStreak) + "\n")
 text_file.close()
