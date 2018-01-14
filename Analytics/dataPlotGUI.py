@@ -1,3 +1,7 @@
+"""
+dataPlotGUI: Class to plot and visualize patient data
+"""
+
 import Tkinter
 import tkMessageBox
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -7,7 +11,6 @@ from datetime import datetime
 import os
 
 class App:
-    
     
     def save(self):
         datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
@@ -54,8 +57,8 @@ class App:
         self.figFont = {'fontname':'Helvetica'}
     
         # Importing data
-        fileName = 'selfReportData.csv'
-        self.pData = pd.read_csv(fileName)
+        self.fileName = 'selfReportData.csv'
+        self.pData = pd.read_csv(self.fileName)
         
         for x in range (0, len(self.pData.index)):
             tempVal = pd.to_datetime(str(self.pData['Date'][x]), format = '%Y%m%d')
@@ -66,7 +69,7 @@ class App:
         # Field selection
         self.fieldVal = Tkinter.StringVar(frame)
         self.fieldVal.set("Mood")
-        self.field_select = Tkinter.OptionMenu(frame, self.fieldVal, "Mood", "Energy", "Concentration", "Guilt", "Agitation", command=self.change_field)
+        self.field_select = Tkinter.OptionMenu(frame, self.fieldVal, "Mood", "Energy", "Concentration", "Interest In Activities", "Agitation", "Guilt", "Suicidality", "Weight", "Hours of Sleep" , command=self.change_field)
         self.field_select.pack(side="left")
         
 
@@ -74,7 +77,7 @@ class App:
         self.saveButton = Tkinter.Button(frame, text='Save Figure', command=self.save)
         self.saveButton.pack(side="left") 
         
-                # Quit button
+        # Quit button
         self.quitButton = Tkinter.Button(frame, text='Quit', command=self.plotQuit)
         self.quitButton.pack(side="left")
         
@@ -97,9 +100,6 @@ class App:
         self.canvas.show()
         self.canvas.get_tk_widget().pack(side='top', fill='both', expand=1)
         frame.pack()
-
- 
-
 
 root = Tkinter.Tk()
 app = App(root)
