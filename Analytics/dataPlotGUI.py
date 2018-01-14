@@ -25,7 +25,8 @@ class App:
         
 #        saveName = self.fieldVal.get() + "_plot.jpg"
         self.fig.savefig(f)
-        tkMessageBox.showinfo("Save", "Figure saved as " + str(f))
+        if(f):
+            tkMessageBox.showinfo("Save", "Figure saved as " + str(f))
         
     def plotQuit(self):
         root.quit()     # stops mainloop

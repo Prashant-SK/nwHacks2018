@@ -39,6 +39,7 @@ for x in range (0, len(pData.index)):
          
 numDepEps = 0
 depEpStreak = 0
+firstDepEp = 0
 
 # Converting weight to weight change
 # First weight has no reference, so is set as zero change
@@ -60,7 +61,8 @@ for i in range (0, len(pData.index)):
     # If more than 5 symptoms present, guidelines indicate depressive episode
     if pData['depSum'][i] > 5:
         pData['depEp'][i] = 1
-        firstDepEp = pData['Date'][i]
+        if(firstDepEp == 0):
+            firstDepEp = pData['Date'][i]
         
         # Keeping a counter on number of depressive episodes and longest interval
         numDepEps += 1
@@ -108,14 +110,7 @@ for i in range (0, len(pData.index)):
     pData['Academic Struggle Probability'][i] = probA
     pData['Peer Conflict Probability'][i] = probP    
 
-# Saving plots and reports
-subdirectory = 'reports/'
-# Creating new subdirectory if it doesn't already exist
-try:
-    os.stat(subdirectory)
-except:
-    os.mkdir(subdirectory) 
-            
+# Generating and saving plot
 plt.figure(figsize = (12,5))
 plt.plot(pData['Date'], pData['Self-Harm Probability'], 'r--', label = 'Self-Harm Probability')
 plt.plot(pData['Date'], pData['Academic Struggle Probability'], 'b--', label = 'Academic Struggle Probability')
@@ -126,7 +121,8 @@ plt.ylabel('Probability')
 plt.title('Probability of Adverse Events')
 f = tkFileDialog.asksaveasfilename(defaultextension=".jpg")
 plt.savefig(f)
-tkMessageBox.showinfo("Save", "Figure saved as " + str(f))
+if(f):
+    tkMessageBox.showinfo("Save", "Figure saved as " + str(f))
 
 if(depEpStreak):
     depEpStatus = "YES"
